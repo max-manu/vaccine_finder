@@ -1,14 +1,14 @@
 from selenium import webdriver
 import json
-browser=webdriver.Chrome(executable_path='/Users/manasdeep/Developer/chromedriver')
+path_to_chromedriver=''#insert the path to chrome driver
+browser=webdriver.Chrome(executable_path=path_to_chromedriver)
 
 browser.get('https://cdn-api.co-vin.in/api/v2/admin/location/states')
 e=browser.find_element_by_tag_name('pre')
 dic=json.loads(e.text)
-with open('data/states.json','w') as f1:
-    f1.write(e.text)
+
 states={}
-with open('data/districts.json','w') as f2:
+with open('districts.json','w') as f2:
     for state in dic["states"]:
         browser.get('https://cdn-api.co-vin.in/api/v2/admin/location/districts/{}'.format(state['state_id']))
         e=browser.find_element_by_tag_name('pre')
