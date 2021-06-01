@@ -156,7 +156,7 @@ def run(id):
         
         #decide(message,total_vaccine)
         
-        time.sleep(5)
+        time.sleep(50)
 def finder(state="himachal pradesh",district='hamirpur'):
   id=get_district_id(state,district)
   print(data(time.strftime('%d-%m-%Y'),district_id=id)
