@@ -7,7 +7,7 @@ Then general information about that center is printed.
 - Address : Address of the Hospital
 - Block : Represents the regional location
 - Pin : Postal pin of hospital
-- Vaccine : Names of vaccine(Number of dose1)   Date : Date on which vaccine is available
+- Vaccine : Names of vaccine(Number of dose1 left)  Date : Date on which vaccine is available
 
 **To Schedule your Slot**  visit [ Cowin ](https://www.cowin.gov.in/home)
 
