@@ -9,6 +9,18 @@ def get_district_id(state="himachal pradesh",district='hamirpur'):
   district=district.lower()
   return dic[state][district]
 
+def data(date,district_id=363):
+      parameters={
+      'district_id':district_id,
+      'date':date
+      }
+
+      r=requests.get('https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict',params=parameters)
+    #text=json.dumps(r.json(),indent=4)
+      dic=r.json()
+    #print(text)
+      return dic
+#strftime(gmtime())
 
 def get_message(date,district_id,block_name=None,min_age_limit=18):
     
@@ -145,8 +157,17 @@ def run(id):
         #decide(message,total_vaccine)
         
         time.sleep(5)
+def finder(state="himachal pradesh",district='hamirpur'):
+  id=get_district_id(state,district)
+  print(data(time.strftime('%d-%m-%Y'),district_id=id)
+  print('Data transfer started')
+  run(id)
 
 if __name__ == "__main__":     
+  state=input('Enter Your State here: ')
+  district=input('Enter Your District here: ')
   
-  id=get_district_id()  
+  id=get_district_id(state,district) 
+  print(data(time.strftime('%d-%m-%Y'),district_id=id)
+  print('Data transfer started')
   run(id)
