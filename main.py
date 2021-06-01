@@ -3,7 +3,7 @@ import requests,json,time,os
 #from twilio.rest import Client
 
 def get_district_id(state="himachal pradesh",district='hamirpur'):
-  with open('data/districts.json') as file:
+  with open('districts.json') as file:
     dic=json.load(file)
   state=state.lower()
   district=district.lower()
